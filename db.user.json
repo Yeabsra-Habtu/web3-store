@@ -1,0 +1,10 @@
+[{
+  "_id": {
+    "$oid": "67aa33b4fc3290b691a0f3b5"
+  },
+  "name": "System Admin",
+  "email": "sysadmin@w3bstore.com",
+  "password": "$2a$10$MU9.lmmKh6jkT3WGwDt5e.KbcUp.Kdk.3uLVRsfOzbRkutcTvN/Ry",
+  "role": "admin"
+}
+]

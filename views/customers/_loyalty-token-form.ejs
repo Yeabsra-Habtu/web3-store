@@ -1,0 +1,56 @@
+<div class="modal fade" id="issueLoyaltyTokens" tabindex="-1" role="dialog"
+    data-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title t-primary">
+                    Issue Loyalty Tokens
+                </h5>
+                <button type="button" class="close" data-dismiss="modal"
+                    aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="/web3/loyalty/issue" method="post">
+                    <div class="form-group">
+                        <label for="customerId">Select Customer</label>
+                        <select class="form-control customer-select"
+                            name="customerId" id="loyalty-customer-id"
+                            required>
+                            <option value="">Choose a customer...</option>
+                            <% customers.forEach(function(customer) { %>
+                                <option value="<%= customer.id %>"><%= customer.name %> (<%= customer.phone %>)</option>
+                            <% }); %>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="amount">Purchase Amount</label>
+                        <input type="number" class="form-control"
+                            name="amount"
+                            placeholder="Enter purchase amount"
+                            required min="0"/>
+                    </div>
+                    <div class="alert alert-info">
+                        <small>
+                            <i class="ic-info-circle"></i> 
+                            Loyalty tokens are issued at a rate of 1 token per 10 currency units spent.
+                            <br>
+                            <strong>Example:</strong> A purchase of 100 will earn 10 loyalty tokens.
+                        </small>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                            data-dismiss="modal">
+                            <i class="ic-cross"></i> Close
+                        </button>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="ic-check"></i> Issue Tokens
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
